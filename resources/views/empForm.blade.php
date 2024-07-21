@@ -39,31 +39,42 @@
             <div class="flex items-center justify-between">
                 <button type="submit"
                     class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
+
             </div>
+            @if (Session('msg'))
+                {{ Session::get('msg') }}
+            @endif
         </form>
 
-        {{-- <h2 class="text-2xl font-bold mb-4">Employee List</h2>
-        <div class="overflow-x-auto">
-            <table class="min-w-full bg-white">
-                <thead>
-                    <tr>
-                        <th class="py-2 px-4 border-b">Name</th>
-                        <th class="py-2 px-4 border-b">Email</th>
-                        <th class="py-2 px-4 border-b">Mobile</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($employees as $employee)
-                <tr>
-                    <td class="py-2 px-4 border-b">{{ $employee->name }}</td>
-                    <td class="py-2 px-4 border-b">{{ $employee->email }}</td>
-                    <td class="py-2 px-4 border-b">{{ $employee->mobile }}</td>
-                </tr>
-                @endforeach
-                </tbody>
-            </table>
-        </div> --}}
+        @if (isset($data))
+            <h2 class="text-2xl font-bold mb-4">Employee List</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white">
+                    <thead>
+                        <tr>
+                            <th class="py-2 px-4 border-b">Name</th>
+                            <th class="py-2 px-4 border-b">Email</th>
+                            <th class="py-2 px-4 border-b">Mobile</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($data as $rows)
+                            <tr>
+                                <td class="py-2 px-4 border-b content-evenly">{{ $rows->name }}</td>
+                                <td class="py-2 px-4 border-b content-evenly">{{ $rows->email }}</td>
+                                <td class="py-2 px-4 border-b content-evenly">{{ $rows->mobile }}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        @endif
+
+
+
+
     </div>
+
 </body>
 
 </html>

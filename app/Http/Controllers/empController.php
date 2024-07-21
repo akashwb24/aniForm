@@ -15,12 +15,14 @@ class empController extends Controller
         $password = $request->password;
 
         DB::table('employee')->insert([
-            'name' => '$name',
-            'email' => '$emai',
-            'password' => '$password',
-            'mobile' => '$mobile',
+            'name' => $name,
+            'email' => $email,
+            'password' => $password,
+            'mobile' => $mobile,
         ]);
 
-        return redirect()->back()->with('msg', 'Inserted Successfully');
+        $records=DB::table('employee')->get();
+        return view('empForm',['data'=>$records]);
+        //return redirect()->back()->with('msg', 'Inserted Successfully');
     }
 }
