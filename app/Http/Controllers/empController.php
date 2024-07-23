@@ -23,6 +23,7 @@ class empController extends Controller
 
         $records = DB::table('employee')->get();
         return view('empForm', ['data' => $records])->with('msg', 'Inserted Successfully');
+
         //return redirect()->back()->with('msg', 'Inserted Successfully');
     }
 }
