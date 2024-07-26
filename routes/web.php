@@ -1,7 +1,6 @@
 <?php
 
 //use App\Http\Controllers\FormController;
-
 use App\Http\Controllers\empController;
 use Illuminate\Support\Facades\Route;
 
