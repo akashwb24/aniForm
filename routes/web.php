@@ -11,3 +11,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('dform', 'empForm');
 Route::post('pform', [empController::class, 'setdata']);
+
+//CONTINUE FROM 37 NUMBER VIDEO, PAGINATION START, ANILAB LAST ENCOUNTERED PROJECT CREATED
